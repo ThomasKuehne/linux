@@ -2885,7 +2885,7 @@ char *hid_resolv_usage(unsigned usage, struct seq_file *f) {
 	char *buf = NULL;
 	int len = 0;
 	const char *modifier = NULL;
-	unsigned int usage_modifier = usage & 0xF000;
+	unsigned int usage_modifier;
 	unsigned int usage_actual = usage & 0xFFFF;
 
 	buf = resolv_usage_page(usage >> 16, f);
@@ -2904,7 +2904,8 @@ char *hid_resolv_usage(unsigned usage, struct seq_file *f) {
 	}
 	for (p = hid_usage_table; p->description; p++)
 		if (p->page == (usage >> 16)) {
-			if (p->page == 0x20 && usage_modifier) {
+			if (p->page == 0x20 && (usage & 0xF000) && (usage & 0x0FFF)) {
+				usage_modifier = usage & 0xF000;
 				for (m = p; m->description; m++) {
 					if (p->page == m->page && m->usage
 							== usage_modifier) {
@@ -2913,7 +2914,7 @@ char *hid_resolv_usage(unsigned usage, struct seq_file *f) {
 					}
 				}
 				if (modifier)
-					usage_actual = usage_actual & 0x0FFF;
+					usage_actual &= 0x0FFF;
 			}
 
 			if (!modifier)
