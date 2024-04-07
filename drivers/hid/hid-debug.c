@@ -3485,6 +3485,7 @@ static const char *keys[KEY_MAX + 1] = {
 	[KEY_WORDPROCESSOR] = "WordProcessor",	[KEY_WPS_BUTTON] = "WPSButton",
 	[KEY_WWAN] = "WWAN",			[KEY_ZOOMIN] = "ZoomIn",
 	[KEY_ZOOMOUT] = "ZoomOut",		[KEY_ZOOMRESET] = "ZoomReset",
+	[KEY_REFRESH_RATE_TOGGLE] = "KeyRefreshRateToggle",
 };
 
 static const char *relatives[REL_MAX + 1] = {
