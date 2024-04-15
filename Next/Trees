@@ -208,6 +208,7 @@ hid		git	git://git.kernel.org/pub/scm/linux/kernel/git/hid/hid.git#for-next
 i2c		git	git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git#i2c/for-next
 i2c-host	git	git://git.kernel.org/pub/scm/linux/kernel/git/andi.shyti/linux.git#i2c/i2c-host
 i3c		git	git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git#i3c/next
+dmi		git	git://git.kernel.org/pub/scm/linux/kernel/git/jdelvare/staging.git#dmi-for-next
 hwmon-staging	git	git://git.kernel.org/pub/scm/linux/kernel/git/groeck/linux-staging.git#hwmon-next
 jc_docs		git	git://git.lwn.net/linux.git#docs-next
 v4l-dvb		git	git://linuxtv.org/media_tree.git#master
